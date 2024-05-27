@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аналіз настроїв</title>
+    <link rel="stylesheet" href="static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Аналіз настроїв</h1>
+    <div class="form-container">
+        <form id="sentiment-form">
+            <textarea name="text" rows="4" cols="50"></textarea><br>
+            <label for="language">Мова:</label>
+            <select name="language" id="language">
+                <option value="en">Англійська</option>
+                <option value="uk">Українська</option>
+            </select><br>
+            <div class="button-container">
+                <input type="submit" value="Аналізувати" class="button button-analyze">
+                <button type="button" id="clear-history" class="button button-clear">Очистити історію</button>
+            </div>
+        </form>
+        <form id="upload-form">
+            <label for="file-upload" class="custom-file-upload">
+                Choose File
+            </label>
+            <input id="file-upload" type="file" name="file"/><br>
+            <input type="submit" value="Завантажити файл для аналізу" class="button button-analyze">
+        </form>
+    </div>
+    <div id="result" class="result-container"></div>
+    <div class="chart-container">
+        <canvas id="polarityChart"></canvas>
+    </div>
+    <div class="chart-container">
+        <canvas id="subjectivityChart"></canvas>
+    </div>
+    <script src="static/script.js"></script>
+</body>
+</html>
